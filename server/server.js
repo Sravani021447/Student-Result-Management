@@ -144,8 +144,10 @@ app.get("/api/results", protect, teacherOnly, async (req, res) => {
 });
 
 // READ student own results
+// READ student own results
 app.get("/api/results/my", protect, async (req, res) => {
   try {
+    console.log("Student rollNumber from token:", req.user.rollNumber);
     const results = await Result.find({ rollNumber: req.user.rollNumber }).sort({ createdAt: -1 });
     res.json({ success: true, results });
   } catch (err) {
