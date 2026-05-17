@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API = "http://localhost:5000/api";
+const API = "https://student-result-backend-u9t1.onrender.com/api";
 
 export default function Login({ onLogin }) {
   const [form, setForm] = useState({ email: "", password: "" });
